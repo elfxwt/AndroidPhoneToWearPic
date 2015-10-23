@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">AmbientBitmapTest</string>
+    <string name="title">The bottom is the pictures in /AmbientBitmapTest/pictures.Click the picture to send to Wear and check the ambient mode state.</string>
+</resources>

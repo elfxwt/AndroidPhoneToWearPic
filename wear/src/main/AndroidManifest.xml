@@ -1,0 +1,43 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.asus.ambientbitmaptest"
+    android:versionCode="1"
+    android:versionName="1.0">
+    <uses-feature android:name="android.hardware.type.watch" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <application android:allowBackup="true" >
+
+
+        <service
+            android:name="com.asus.ambientbitmaptest.AmbientWatchface"
+            android:allowEmbedded="true"
+            android:label="AmbientTest"
+            android:permission="android.permission.BIND_WALLPAPER"
+            android:taskAffinity="" >
+            <meta-data
+                android:name="android.service.wallpaper"
+                android:resource="@xml/watch_face" />
+            <meta-data
+                android:name="com.google.android.wearable.watchface.preview"
+                android:resource="@drawable/p280" />
+            <meta-data
+                android:name="com.google.android.wearable.watchface.companionConfigurationAction"
+                android:value="com.asus.ambientbitmaptest.AmbientWatchface.ui.CONFIG_WATCHFACE_AmbientWhite" />
+            <meta-data
+                android:name="com.google.android.wearable.watchface.wearableConfigurationAction"
+                android:value="com.asus.ambientbitmaptest.AmbientWatchface.ui.CONFIG_WATCHFACE_AmbientWhite" />
+
+            <intent-filter>
+                <action android:name="android.service.wallpaper.WallpaperService" />
+
+                <category android:name="com.google.android.wearable.watchface.category.WATCH_FACE" />
+            </intent-filter>
+        </service>
+
+
+    </application>
+
+</manifest>
